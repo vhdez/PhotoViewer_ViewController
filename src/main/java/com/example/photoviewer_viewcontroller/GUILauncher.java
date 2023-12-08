@@ -12,6 +12,7 @@ public class GUILauncher extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GUILauncher.class.getResource("View.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 471, 518);
+        Controller.stage = stage;
         stage.setTitle("My Photos");
         stage.setScene(scene);
         stage.show();

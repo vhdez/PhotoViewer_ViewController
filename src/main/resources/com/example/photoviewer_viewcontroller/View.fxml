@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
@@ -20,8 +21,8 @@
                   <ImageView fx:id="myImageView" fitHeight="319.0" fitWidth="389.0" layoutX="29.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
                   <Button fx:id="nextButton" layoutX="232.0" layoutY="369.0" mnemonicParsing="false" onAction="#nextButtonWasPressed" prefHeight="25.0" prefWidth="204.0" text="Next" />
                   <Button fx:id="prevButton" layoutX="20.0" layoutY="369.0" mnemonicParsing="false" onAction="#prevButtonWasPressed" prefHeight="25.0" prefWidth="204.0" text="Previous" />
-                  <Button fx:id="newButton" layoutX="20.0" layoutY="402.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="204.0" text="New" />
-                  <Button fx:id="deleteButton" layoutX="232.0" layoutY="402.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="204.0" text="Delete" />
+                  <Button fx:id="newButton" layoutX="20.0" layoutY="402.0" mnemonicParsing="false" onAction="#newButtonPressed" prefHeight="25.0" prefWidth="204.0" text="New" />
+                  <Button fx:id="deleteButton" layoutX="232.0" layoutY="402.0" mnemonicParsing="false" onAction="#deleteImage" prefHeight="25.0" prefWidth="204.0" text="Delete" />
                   <Label fx:id="instructions" layoutX="29.0" layoutY="427.0" prefHeight="31.0" prefWidth="422.0" text="Welcome to your Photos!">
                      <font>
                         <Font size="40.0" />
@@ -35,7 +36,10 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <ListView fx:id="oldPhotos" layoutX="14.0" layoutY="11.0" prefHeight="454.0" prefWidth="436.0" />
+                  <ListView fx:id="oldPhotos" layoutX="14.0" layoutY="11.0" prefHeight="419.0" prefWidth="436.0" />
+                  <Button layoutX="14.0" layoutY="436.0" mnemonicParsing="false" onAction="#undoDeleteFromOldList" prefHeight="26.0" prefWidth="179.0" text="Undo Delete" />
+                  <Label layoutX="210.0" layoutY="441.0" prefHeight="17.0" prefWidth="99.0" text="Undeleted Image:" />
+                  <TextField fx:id="selectedImageText" layoutX="319.0" layoutY="436.0" prefHeight="26.0" prefWidth="130.0" />
                </children></AnchorPane>
          </content>
       </Tab>
