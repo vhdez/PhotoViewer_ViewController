@@ -126,13 +126,14 @@ public class Controller {
             objOutputStream.writeObject(imageNameCB.getText());
         }
         objOutputStream.flush();
+        outputStream.flush();
     }
 
     void restoreData() throws Exception {
         File fileForData = new File("MyData");
         FileInputStream inputStream = new FileInputStream(fileForData);
         ObjectInputStream objInputStream = new ObjectInputStream(inputStream);
-        int numOfSavedObjects = objInputStream.readInt();
+        Integer numOfSavedObjects = (Integer)objInputStream.readObject();
         for (int i = 0; i < numOfSavedObjects; i = i + 1) {
             String listText = (String) objInputStream.readObject();
             removedImages.add(listText);
